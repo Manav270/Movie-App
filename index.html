@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie searcher</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="/images/icons8-film-reel-64.png">
+</head> 
+<body>
+    <header>
+        <h1 id="movies1">Movies</h1>
+        
+        <form id="form" action="">
+            <input type="text" placeholder="Search movie" id="search" class="search">
+        </form>
+    </header>
+    <div id="tags">
+        <!-- <div class="tag">Action</div>
+        <div class="tag">Drama</div>
+        <div class="tag">Comedy</div>
+        <div class="tag">Horror</div> -->
+    </div>
+    <div id="myNav" class="overlay">
+
+        <!-- Button to close the overlay navigation -->
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      
+        <!-- Overlay content -->
+        <div class="overlay-content" id="overlay-content"></div>
+        <a href="javascript:void(0)" class="arrow left_arrow" id="left-arrow"> < </a>
+        <a href="javascript:void(0)" class="arrow right_arrow" id="right-arrow"> > </a>
+    </div>
+    <main id="main">
+    </main>
+    <div class="pagination">
+        <div class="front_back" id="prev"><</div>
+        <div class="curr" id="curr">1</div>
+        <div class="front_back" id="next">></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

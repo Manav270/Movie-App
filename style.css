@@ -1,0 +1,255 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;700&display=swap');
+
+*{
+    box-sizing: border-box;
+}
+:root{
+    --primary-color:#4DC5BE;
+    --secondary-color:#07F5E6 
+}
+
+body{
+    background-color: var(--primary-color);
+    font-family: 'Poppins','sans-serif';
+    margin: 0;
+}
+header{
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--secondary-color);
+
+}
+header h1{
+    background-color: aquamarine;
+    color: white;
+    border-radius: 20px;
+    padding: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+.search
+{
+    background-color: transparent;
+    border: 1px solid black;
+    border-radius: 50px;
+    padding: 8px 16px;
+    font-family: inherit;
+    margin-top: 30px;
+}
+.search:focus{
+    background-color: var(--primary-color);
+    color:white;
+    outline: 0;
+    border: none;
+}
+.search::placeholder{
+    color: whitesmoke;
+}
+
+main{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    
+}
+.movie{
+    width: 300px;
+   margin: 8px;
+   box-shadow: 0.5px 2px 4px rgba(0,0,0,1);
+   background-color: var(--secondary-color);
+   position: relative;
+   overflow: hidden;
+}
+.movie img{
+    width: 100%;
+}
+.movie-info{
+    display: flex;
+    color: white;
+    justify-content: space-between;
+    padding: 8px 16px 16px;
+}
+.movie-info h3{
+    margin-top: 0;
+}
+.movie-info span{
+    background-color: var(--primary-color);
+    padding: 8px;
+    font-weight: bold;
+    border-radius: 5px;
+}
+.movie-info span.green{
+    color: lightgreen;
+}
+.movie-info span.red{
+    color: red;
+}
+.movie-info span.yellow{
+    color: yellow;
+}
+.description{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: white;
+    padding: 16px;
+    max-height: 90%;
+    transform: translateY(101%);
+    transition: 0.4s ease-in;
+}
+.movie:hover .description{
+    transform: translateY(0);
+}
+#tags{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 90%;
+    align-items: center;
+    margin: 10px auto;
+}
+.tag{
+    color: white;
+    background-color: lightblue;
+    border-radius: 25px;
+    padding: 10px 15px;
+    margin: 5px;
+    cursor: pointer;
+}
+.tag.highlights{
+    background-color: white;
+    color: lightblue;
+}
+.noRes{
+    color: white;
+}
+.pagination{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    margin: 10px 20px;
+}
+.front_back{
+    padding: 20px;
+    cursor: pointer;
+    font-size: 20px;
+}
+.front_back.disable{
+    color: gray;
+    cursor: not-allowed;
+}
+.curr{
+    padding: 15px 25px;
+    border: 5px solid lightblue;
+    border-radius: 50%;
+    font-weight: 800;
+}
+.Know_more{
+    border: none;
+    background-color: white;
+    font-weight: 700;
+    font-size: 13px;
+   cursor: pointer;
+    margin-left: 0;
+    padding: 0;
+}
+.Know_more:hover{
+    text-decoration: underline;
+}
+.overlay {
+    /* Height & width depends on how you want to reveal the overlay (see JS below) */   
+    height: 100%;
+    width: 0;
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    background-color: rgb(0,0,0); /* Black fallback color */
+    background-color: rgba(0,0,0, 0.9); /* Black w/opacity */
+    overflow-x: hidden; /* Disable horizontal scroll */
+    transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+  }
+  
+  /* Position the content inside the overlay */
+  .overlay-content {
+    position: relative;
+    top: 15%; /* 25% from the top */
+    width: 100%; /* 100% width */
+    text-align: center; /* Centered text/links */
+    margin-top: 30px; /* 30px top margin to avoid conflict with the close button on smaller screens */
+  }
+  
+  /* The navigation links inside the overlay */
+  .overlay a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 36px;
+    color: #818181;
+    display: block; /* Display block instead of inline */
+    transition: 0.3s; /* Transition effects on hover (color) */
+  }
+  
+  /* When you mouse over the navigation links, change their color */
+  .overlay a:hover, .overlay a:focus {
+    color: #f1f1f1;
+  }
+  
+  /* Position the close button (top right corner) */
+  .overlay .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+  }
+  
+  /* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */
+  @media screen and (max-height: 450px) {
+    .overlay a {font-size: 20px}
+    .overlay .closebtn {
+      font-size: 40px;
+      top: 15px;
+      right: 35px;
+    }
+  }
+  .store.hide{
+    display: none;
+  }
+  .store.show{
+    display: inline-block;
+  }
+.arrow{
+    position: absolute;
+    border:1px solid white;
+    border-radius: 20%;
+}
+.left_arrow{
+    top: 50%;
+    left: 15%;
+    transform: translateY(-50%);
+}
+.right_arrow{
+    top: 50%;
+    right: 15%;
+    transform: translateY(-50%);
+}
+.arrow:hover{
+    background-color: gray;
+}
+.cDot{
+    margin-top: 20px;
+}
+.cDot .cDots{
+    color: white;
+    padding: 5px 15px;
+    border: 5px solid lightblue;
+    border-radius: 50%;
+    font-weight: 700;
+    font-size: 20px;
+    
+}
+.cDot .cDots.active{
+    border-color: orange;
+}
